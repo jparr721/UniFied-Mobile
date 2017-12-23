@@ -9,8 +9,11 @@ class Feed extends Component {
       <View style={styles.container}>
         <View style= {styles.header}>
           <View style= {styles.imageContainer}>
-            <Image source={require('../../images/gv1.png')}
-              style={styles.image} />
+            <TouchableOpacity style={styles.imageOpacity}
+              onPress={() => this.props.navigation.navigate('DrawerOpen')}>
+              <Image source={require('../../images/gv1.png')}
+                style={styles.image} />
+            </TouchableOpacity>
           </View>
           <View style={styles.search}>
             <Search />
@@ -38,6 +41,7 @@ class Feed extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'column',
   },
   header: {
@@ -54,6 +58,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     resizeMode: 'contain'
+  },
+  imageOpacity: {
+    flex: 1,
+    width: 50,
+    height: 50,
   },
   tile: {
     margin: 10,

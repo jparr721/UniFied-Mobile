@@ -6,7 +6,7 @@ class Tile extends Component {
   render() {
     return(
       <View style={styles.container}>
-        <View>
+        <View style={styles.tileHeader}>
           <Avatar
             small
             rounded
@@ -16,6 +16,9 @@ class Tile extends Component {
             activeOpacity={0.7}
           />
         </View>
+        <View style={styles.mainContent}>
+
+        </View>
         {this.props.children}
       </View>
     );
@@ -24,13 +27,24 @@ class Tile extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    padding:10,
     height: 200,
-    borderRadius: 4,
+    borderRadius: 10,
     backgroundColor: '#80DEEA',
   },
+  tileHeader: {
+    marginBottom: 10,
+  },
   avatar: {
-    margin: 5,
-  }
+
+  },
+  mainContent: {
+    borderRadius: 10,
+    height:'75%',
+    width: '100%',
+    backgroundColor: 'white',
+    alignSelf: 'center',
+  },
 });
 
 export { Tile };
