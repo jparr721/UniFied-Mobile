@@ -26,7 +26,7 @@ class FilterContainer extends Component {
                     name='chevron-down'
                     type="material-community"
                     size={28}
-                    color='#9e9e9e'
+                    color='#8d8d8d'
                   />
                 </View>
               </TouchableOpacity>
@@ -178,7 +178,7 @@ class FilterContainer extends Component {
             name='chevron-up'
             type="material-community"
             size={28}
-            color='#9e9e9e'
+            color='#8d8d8d'
           />
         </TouchableOpacity>
       </View>

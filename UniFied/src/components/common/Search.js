@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { SearchBar } from 'react-native-elements';
+import { View, StyleSheet, TextInput } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 class Search extends Component {
   render() {
     return(
       <View style={styles.searchBarContainer}>
-        <SearchBar
-          clearIcon
-          lightTheme
-          onChangeText={() => console.log('changed')}
-          placeholder='Search for an item...'
-          containerStyle={{backgroundColor: 'rgba(0,0,0,0)',
-                               borderTopWidth: 0,
-                               borderBottomWidth: 0,
-                               width: '100%'}}
-        />
+        <View style={styles.icon}>
+          <Icon
+            name='magnify'
+            type="material-community"
+            size={20}
+            color='#494949'/>
+        </View>
+        <View style={styles.search}>
+          <TextInput
+            onChangeText={console.log("changed")}
+            underlineColorAndroid='#494949'
+            placeholderTextColor='#494949'
+            placeholder='Search'/>
+        </View>
       </View>
     );
   }
@@ -23,9 +27,18 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
   searchBarContainer: {
-    width: '100%',
-    alignItems: 'flex-end',
-    padding: 10,
+    //backgroundColor: '#efefef',
+    paddingLeft: 10,
+    paddingRight: 10,
+    margin: 15,
+    borderRadius: 10,
+    flexDirection: 'row',
+  },
+  search: {
+    flex: 1,
+  },
+  icon: {
+    justifyContent: 'center',
   }
 });
 

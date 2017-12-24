@@ -17,7 +17,7 @@ class FilterShortcutBar extends Component {
               type="material-community"
               size={28}
               color='#80DEEA'/>
-            <Text>Books</Text>
+            <Text style={styles.shortcutText}>Books</Text>
           </View>
           <View style={styles.iconBox}>
             <Icon
@@ -25,7 +25,7 @@ class FilterShortcutBar extends Component {
               type="material-community"
               size={28}
               color='#80DEEA'/>
-            <Text>Housing</Text>
+            <Text style={styles.shortcutText}>Housing</Text>
           </View>
           <View style={styles.iconBox}>
             <Icon
@@ -33,7 +33,7 @@ class FilterShortcutBar extends Component {
               type="material-community"
               size={28}
               color='#80DEEA'/>
-            <Text>Clubs</Text>
+            <Text style={styles.shortcutText}>Clubs</Text>
           </View>
           <View style={styles.iconBox}>
             <Icon
@@ -41,7 +41,7 @@ class FilterShortcutBar extends Component {
               type="material-community"
               size={28}
               color='#80DEEA'/>
-            <Text>Tutoring</Text>
+            <Text style={styles.shortcutText}>Tutoring</Text>
           </View>
           <View style={styles.iconBox}>
             <Icon
@@ -49,7 +49,7 @@ class FilterShortcutBar extends Component {
               type="material-community"
               size={28}
               color='#80DEEA'/>
-            <Text>Events</Text>
+            <Text style={styles.shortcutText}>Events</Text>
           </View>
         </View>
       </View>
@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
 
   },
   filters: {
-
     flexDirection: 'row',
     justifyContent: 'center',
   },
@@ -73,7 +72,10 @@ const styles = StyleSheet.create({
     flex:1,
     alignItems: 'center',
     flexDirection: 'column',
-  }
+  },
+  shortcutText: {
+    color: '#707070',
+  },
 });
 
 export { FilterShortcutBar };

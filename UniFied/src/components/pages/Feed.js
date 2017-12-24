@@ -43,15 +43,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: '#efefef',
+    paddingBottom:10,
   },
   header: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    backgroundColor: '#80DEEA',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 20,
+    paddingLeft: 20,
   },
   filterShortcutBar: {
 
   },
   imageContainer: {
-    paddingLeft: 20,
+    backgroundColor: '#b4ffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 100,
+    width: 70,
+    height: 70,
+    //elevation: 5,
   },
   image: {
     flex: 1,
@@ -65,7 +78,8 @@ const styles = StyleSheet.create({
     height: 50,
   },
   tile: {
-    margin: 10,
+
+    marginBottom: 10,
   },
   search: {
     flex:1,
