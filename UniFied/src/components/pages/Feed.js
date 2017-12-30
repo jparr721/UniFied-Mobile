@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { View, Image, StyleSheet, ScrollView,
+          TouchableOpacity, Text, Platform } from 'react-native';
 import { Icon, Badge } from 'react-native-elements';
 import { Search, Tile, FilterShortcutBar } from '../common';
 
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#80DEEA',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 20,
+    paddingTop: (Platform.OS === 'ios') ? 50 : 20,
     paddingLeft: 20,
   },
   imageBorder: {
