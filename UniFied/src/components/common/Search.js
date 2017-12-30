@@ -10,7 +10,7 @@ class Search extends Component {
           <Icon
             name='magnify'
             type="material-community"
-            size={20}
+            size={18}
             color='#494949'/>
         </View>
         <View style={styles.search}>

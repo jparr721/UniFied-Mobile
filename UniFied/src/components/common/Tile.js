@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { Avatar } from 'react-native-elements';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { Avatar, Icon, Rating } from 'react-native-elements';
 
 class Tile extends Component {
   render() {
@@ -10,7 +10,7 @@ class Tile extends Component {
           <Avatar
             small
             rounded
-            icon={{name: 'account-circle', size: 24}}
+            icon={{name: 'account-circle', size: 28}}
             overlayContainerStyle={styles.avatar}
             onPress={() => this.props.displayUserMenu()}
             activeOpacity={0.7}
@@ -28,7 +28,63 @@ class Tile extends Component {
           </View>
         </View>
         <View style={styles.mainContent}>
-          <Text style={{fontStyle: 'italic', color:'#494949'}}>Short Desccription will be displayed here.</Text>
+          <View style={styles.leftSide}>
+            <Text style={{fontStyle: 'italic', color:'#494949', flex: 1}}>
+              Short Desccription will be displayed here.
+              The maximum will likely be around 240 characters.
+              But I'm not sure about that yet. STill testing the field size
+              see how big it is and all that.
+              I think I should know soon. Don't read this bro! Please!
+            </Text>
+            <View style={styles.buttons}>
+              <TouchableOpacity>
+                <View style={styles.chatButton}>
+                  <Icon
+                    name='message-text'
+                    type="material-community"
+                    size={18}
+                    color='#4bacb8'/>
+                  <Text style={styles.buttonTitle}>Message</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.favoriteButton}>
+                  <Icon
+                    name='heart'
+                    type="material-community"
+                    size={18}
+                    color='#4bacb8'/>
+                  <Text style={styles.buttonTitle}>Favorite</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.shareButton}>
+                  <Icon
+                    name='share-variant'
+                    type="material-community"
+                    size={18}
+                    color='#4bacb8'/>
+                  <Text style={styles.buttonTitle}>Share</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.rightSide}>
+            <View style={styles.schoolLogoWrapper}>
+              <Image source={require('../../images/gv1.png')}
+              style={styles.schoolLogo} />
+            </View>
+            <Rating
+              ratingCount={4}
+              startingValue={3}
+              readonly
+              imageSize={20}
+              onFinishRating={this.ratingCompleted}
+              ratingColor='#4bacb8'
+              style={styles.rating}
+            />
+            <Text>User Rating</Text>
+          </View>
         </View>
         {this.props.children}
       </View>
@@ -69,16 +125,87 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
   avatar: {
-
+    backgroundColor: '#4bacb8',
   },
   mainContent: {
     borderRadius: 5,
     flex:1,
     width: '100%',
-    backgroundColor: '#efefef',
+    backgroundColor: 'white',
     alignSelf: 'center',
-    padding:10,
+    paddingLeft:10,
+    paddingTop: 10,
+    paddingRight: 10,
+    flexDirection: 'row',
   },
+  rightSide: {
+    width: '20%',
+    height: '100%',
+    alignItems: 'center',
+    paddingBottom:10,
+    //backgroundColor: '#b4ffff',
+  },
+  leftSide: {
+    width: '80%',
+    //backgroundColor: 'red',
+    //flexDirection: 'row',
+  },
+  schoolLogoWrapper: {
+    height: 40,
+    width: 40,
+    alignSelf: 'center',
+    marginTop: 10,
+    flex: 1,
+    //backgroundColor: 'red',
+
+  },
+  schoolLogo: {
+    resizeMode: 'contain',
+    height: null,
+    width: null,
+    flex: 1,
+  },
+  chatButton: {
+    //width: '30%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    paddingRight: 10,
+  },
+  buttonTitle: {
+    color: '#4bacb8',
+    marginLeft: 5,
+    fontSize: 16,
+  },
+  favoriteButton: {
+    //width: '30%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    //backgroundColor: 'green',
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  shareButton: {
+    //width: '30%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    paddingLeft: 10,
+  },
+  buttons: {
+    height: '30%',
+    width: '100%',
+    alignSelf: 'flex-end',
+    flexDirection: 'row',
+  },
+  rating: {
+    //color: 'red',
+    padding: 5,
+  }
 });
 
 export { Tile };

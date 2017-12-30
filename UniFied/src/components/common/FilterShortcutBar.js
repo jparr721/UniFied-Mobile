@@ -59,7 +59,9 @@ class FilterShortcutBar extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems:'center'
+    alignItems:'center',
+    backgroundColor: 'white',
+    paddingBottom: 10,
   },
   seeMore: {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Icon, Badge } from 'react-native-elements';
 import { Search, Tile, FilterShortcutBar } from '../common';
 
 class Feed extends Component {
@@ -8,13 +8,25 @@ class Feed extends Component {
     return (
       <View style={styles.container}>
         <View style= {styles.header}>
-          <View style= {styles.imageContainer}>
-            <TouchableOpacity style={styles.imageOpacity}
-              onPress={() => this.props.navigation.navigate('DrawerOpen')}>
-              <Image source={require('../../images/gv1.png')}
-                style={styles.image} />
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity style={styles.sideNavOpacity}
+            onPress={() => this.props.navigation.navigate('DrawerOpen')}>
+
+              <View style={styles.imageBorder}>
+                <View style={styles.imageWrapper}>
+                  <Image source={require('../../images/profile.png')}
+                    style={styles.image} />
+                </View>
+              </View>
+              <View style={styles.badgeContainer}>
+                <Badge containerStyle={styles.badge}>
+                  <View style={styles.schoolLogoWrapper}>
+                    <Image source={require('../../images/gv1.png')}
+                    style={styles.schoolLogo} />
+                  </View>
+                </Badge>
+              </View>
+
+          </TouchableOpacity>
           <View style={styles.search}>
             <Search />
           </View>
@@ -44,7 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#efefef',
-    paddingBottom:10,
   },
   header: {
     flexDirection: 'row',
@@ -54,36 +65,64 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingLeft: 20,
   },
-  filterShortcutBar: {
-
-  },
-  imageContainer: {
-    backgroundColor: '#b4ffff',
+  imageBorder: {
+    borderRadius: 100,
+    width: 75,
+    height: 75,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 100,
-    width: 70,
-    height: 70,
-    //elevation: 5,
+    backgroundColor: '#4bacb8',
   },
   image: {
-    flex: 1,
-    width: 50,
-    height: 50,
-    resizeMode: 'contain'
+    flex:1,
+    width: 60,
+    height: 60,
+    borderRadius: 100,
   },
-  imageOpacity: {
-    flex: 1,
-    width: 50,
-    height: 50,
+  imageWrapper: {
+    width: 60,
+    height: 60,
+    borderRadius: 100,
   },
   tile: {
-
     marginBottom: 10,
   },
   search: {
     flex:1,
-  }
+  },
+  badgeContainer: {
+    flexDirection: 'column',
+    position: 'absolute',
+    paddingTop: 60,
+    paddingLeft: 60,
+  },
+  badge: {
+    backgroundColor: '#b4ffff',
+    height: 30,
+    width: 40,
+    elevation: 5,
+  },
+  schoolLogoWrapper: {
+    height: 30,
+    width: 30,
+    paddingTop: 5,
+    paddingBottom: 5,
+
+  },
+  schoolLogo: {
+    resizeMode: 'contain',
+    height: null,
+    width: null,
+    flex: 1,
+  },
+  sideNavOpacity: {
+    height: 100,
+    width: 100,
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    //backgroundColor: 'rgba(0,0,0,0.5)',
+  },
 });
 
 export default Feed;
