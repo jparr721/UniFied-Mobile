@@ -27,11 +27,13 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
   searchBarContainer: {
-    backgroundColor: (Platform.OS === 'ios') ? '#b4ffff' : null,
+    backgroundColor: (Platform.OS === 'ios') ? '#b4ffff' : '#b4ffff',
     paddingLeft: 10,
     paddingRight: 10,
+    paddingTop: (Platform.OS === 'ios') ? 10 : null,
+    paddingBottom: (Platform.OS === 'ios') ? 10 : null,
     margin: 15,
-    borderRadius: 10,
+    borderRadius: (Platform.OS === 'ios') ? 5 : 10,
     flexDirection: 'row',
   },
   search: {

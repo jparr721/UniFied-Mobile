@@ -31,10 +31,7 @@ class Tile extends Component {
           <View style={styles.leftSide}>
             <Text style={{fontStyle: 'italic', color:'#494949', flex: 1}}>
               Short Desccription will be displayed here.
-              The maximum will likely be around 240 characters.
-              But I'm not sure about that yet. STill testing the field size
-              see how big it is and all that.
-              I think I should know soon. Don't read this bro! Please!
+              Tapping on the post will reveal more details!
             </Text>
             <View style={styles.buttons}>
               <TouchableOpacity>
@@ -83,7 +80,7 @@ class Tile extends Component {
               ratingColor='#4bacb8'
               style={styles.rating}
             />
-            <Text>User Rating</Text>
+            <Text style={{alignItems: 'center'}}>User Rating</Text>
           </View>
         </View>
         {this.props.children}
