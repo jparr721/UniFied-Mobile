@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput, Platform } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 class Search extends Component {
@@ -27,7 +27,7 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
   searchBarContainer: {
-    //backgroundColor: '#efefef',
+    backgroundColor: (Platform.OS === 'ios') ? '#b4ffff' : null,
     paddingLeft: 10,
     paddingRight: 10,
     margin: 15,
