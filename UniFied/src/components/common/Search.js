@@ -27,7 +27,7 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
   searchBarContainer: {
-    backgroundColor: (Platform.OS === 'ios') ? '#b4ffff' : '#b4ffff',
+    backgroundColor: (Platform.OS === 'ios') ? '#b4ffff' : null,
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: (Platform.OS === 'ios') ? 10 : null,
