@@ -44,6 +44,9 @@ const Router = DrawerNavigator(
         fontSize: 18,
       },
     },
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle',
   }
 );
 
