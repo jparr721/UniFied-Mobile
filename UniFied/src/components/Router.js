@@ -38,8 +38,8 @@ const Router = DrawerNavigator(
   {
     initialRouteName: 'Home',
     contentOptions: {
-      activeTintColor: '#4bacb8',
-      inactiveTintColor: '#707070',
+      activeTintColor: '#e65100',
+      inactiveTintColor: '#8d8d8d',
       labelStyle: {
         fontSize: 18,
       },

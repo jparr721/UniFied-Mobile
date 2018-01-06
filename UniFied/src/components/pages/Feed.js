@@ -3,6 +3,7 @@ import { View, Image, StyleSheet, ScrollView,
           TouchableOpacity, Text, Platform } from 'react-native';
 import { Icon, Badge } from 'react-native-elements';
 import { Search, Tile, FilterShortcutBar } from '../common';
+import ActionButton from 'react-native-action-button';
 
 class Feed extends Component {
   render() {
@@ -11,7 +12,6 @@ class Feed extends Component {
         <View style= {styles.header}>
           <TouchableOpacity style={styles.sideNavOpacity}
             onPress={() => this.props.navigation.navigate('DrawerOpen')}>
-
               <View style={styles.imageBorder}>
                 <View style={styles.imageWrapper}>
                   <Image source={require('../../images/profile.png')}
@@ -19,14 +19,11 @@ class Feed extends Component {
                 </View>
               </View>
               <View style={styles.badgeContainer}>
-                <Badge containerStyle={styles.badge}>
                   <View style={styles.schoolLogoWrapper}>
                     <Image source={require('../../images/gv1.png')}
                     style={styles.schoolLogo} />
                   </View>
-                </Badge>
               </View>
-
           </TouchableOpacity>
           <View style={styles.search}>
             <Search />
@@ -47,6 +44,10 @@ class Feed extends Component {
           </View>
         </ScrollView>
         <FilterShortcutBar />
+        <ActionButton
+          offsetY={'20%'}
+          offsetX={'5%'}
+          buttonColor="#e65100"></ActionButton>
       </View>
     );
   }
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    backgroundColor: '#80DEEA',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: (Platform.OS === 'ios') ? 50 : 20,
@@ -68,11 +69,11 @@ const styles = StyleSheet.create({
   },
   imageBorder: {
     borderRadius: 100,
-    width: 75,
-    height: 75,
+    width: 65,
+    height: 65,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#4bacb8',
+    backgroundColor: '#8d8d8d',
   },
   image: {
     flex:1,
@@ -96,25 +97,23 @@ const styles = StyleSheet.create({
     position: 'absolute',
     paddingTop: 60,
     paddingLeft: 60,
-  },
-  badge: {
-    backgroundColor: '#b4ffff',
-    height: 30,
-    width: 40,
-    elevation: 5,
+    //backgroundColor: 'blue'
   },
   schoolLogoWrapper: {
-    height: 30,
-    width: 30,
-    paddingTop: 5,
-    paddingBottom: 5,
-
+    height: 35,
+    width: 35,
+    padding: 5,
+    //paddingBottom: 5,
+    backgroundColor: '#bdbdbd',
+    borderRadius: 100,
   },
   schoolLogo: {
+    padding:2,
     resizeMode: 'contain',
     height: null,
     width: null,
     flex: 1,
+
   },
   sideNavOpacity: {
     height: 100,

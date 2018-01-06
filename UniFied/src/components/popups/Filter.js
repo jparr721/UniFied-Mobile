@@ -39,7 +39,7 @@ class FilterContainer extends Component {
                     name='laptop-chromebook'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Computers</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -47,7 +47,7 @@ class FilterContainer extends Component {
                     name='book-open-variant'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Books</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -55,7 +55,7 @@ class FilterContainer extends Component {
                     name='home-modern'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Housing</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -63,7 +63,7 @@ class FilterContainer extends Component {
                     name='car'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Cars</Text>
                 </View>
               </View>
@@ -73,7 +73,7 @@ class FilterContainer extends Component {
                     name='calendar'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Events</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -81,7 +81,7 @@ class FilterContainer extends Component {
                     name='chair-school'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Furniture</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -89,7 +89,7 @@ class FilterContainer extends Component {
                     name='content-cut'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Haircuts</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -97,7 +97,7 @@ class FilterContainer extends Component {
                     name='television'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>TVs</Text>
                 </View>
               </View>
@@ -107,7 +107,7 @@ class FilterContainer extends Component {
                     name='account-multiple-plus'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Clubs</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -115,7 +115,7 @@ class FilterContainer extends Component {
                     name='cellphone'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Phones</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -123,7 +123,7 @@ class FilterContainer extends Component {
                     name='power-plug'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Electronics</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -131,7 +131,7 @@ class FilterContainer extends Component {
                     name='gamepad-variant'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Video Games</Text>
                 </View>
               </View>
@@ -141,7 +141,7 @@ class FilterContainer extends Component {
                     name='briefcase'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Jobs</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -149,7 +149,7 @@ class FilterContainer extends Component {
                     name='school'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Tutoring</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -157,7 +157,7 @@ class FilterContainer extends Component {
                     name='sunglasses'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>Accessories</Text>
                 </View>
                 <View style={styles.iconBox}>
@@ -165,7 +165,7 @@ class FilterContainer extends Component {
                     name='soccer'
                     type="material-community"
                     size={28}
-                    color='#80DEEA'/>
+                    color='#e65100'/>
                   <Text>IM Sports</Text>
                 </View>
               </View>

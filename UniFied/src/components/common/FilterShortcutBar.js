@@ -16,7 +16,7 @@ class FilterShortcutBar extends Component {
               name='book-open-variant'
               type="material-community"
               size={28}
-              color='#80DEEA'/>
+              color='#e65100'/>
             <Text style={styles.shortcutText}>Books</Text>
           </View>
           <View style={styles.iconBox}>
@@ -24,7 +24,7 @@ class FilterShortcutBar extends Component {
               name='home-modern'
               type="material-community"
               size={28}
-              color='#80DEEA'/>
+              color='#e65100'/>
             <Text style={styles.shortcutText}>Housing</Text>
           </View>
           <View style={styles.iconBox}>
@@ -32,7 +32,7 @@ class FilterShortcutBar extends Component {
               name='account-multiple-plus'
               type="material-community"
               size={28}
-              color='#80DEEA'/>
+              color='#e65100'/>
             <Text style={styles.shortcutText}>Clubs</Text>
           </View>
           <View style={styles.iconBox}>
@@ -40,7 +40,7 @@ class FilterShortcutBar extends Component {
               name='school'
               type="material-community"
               size={28}
-              color='#80DEEA'/>
+              color='#e65100'/>
             <Text style={styles.shortcutText}>Tutoring</Text>
           </View>
           <View style={styles.iconBox}>
@@ -48,7 +48,7 @@ class FilterShortcutBar extends Component {
               name='calendar'
               type="material-community"
               size={28}
-              color='#80DEEA'/>
+              color='#e65100'/>
             <Text style={styles.shortcutText}>Events</Text>
           </View>
         </View>
