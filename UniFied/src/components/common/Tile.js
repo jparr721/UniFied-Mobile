@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     height: 200,
     //borderRadius: 10,
     backgroundColor: 'white',
-    elevation: 2,
+    elevation: 1,
   },
   tileHeader: {
     flexDirection: 'row',

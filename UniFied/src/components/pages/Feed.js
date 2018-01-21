@@ -1,33 +1,39 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, ScrollView,
-          TouchableOpacity, Text, Platform } from 'react-native';
+         TouchableOpacity, Text, Platform } from 'react-native';
 import { Icon, Badge } from 'react-native-elements';
-import { Search, Tile, FilterShortcutBar } from '../common';
+import { Search, Tile, FilterShortcutBar, Header } from '../common';
 import ActionButton from 'react-native-action-button';
+import { toggleCreatePostModal } from '../../actions';
+import { connect } from 'react-redux';
+import { CreatePost } from '../popups';
 
 class Feed extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style= {styles.header}>
-          <TouchableOpacity style={styles.sideNavOpacity}
-            onPress={() => this.props.navigation.navigate('DrawerOpen')}>
-              <View style={styles.imageBorder}>
-                <View style={styles.imageWrapper}>
-                  <Image source={require('../../images/profile.png')}
-                    style={styles.image} />
-                </View>
-              </View>
-              <View style={styles.badgeContainer}>
-                  <View style={styles.schoolLogoWrapper}>
-                    <Image source={require('../../images/gv1.png')}
-                    style={styles.schoolLogo} />
+        <CreatePost />
+        <View style={styles.header}>
+          <Header>
+            <TouchableOpacity style={styles.sideNavOpacity}
+              onPress={() => this.props.navigation.navigate('DrawerOpen')}>
+                <View style={styles.imageBorder}>
+                  <View style={styles.imageWrapper}>
+                    <Image source={require('../../images/profile.png')}
+                      style={styles.image} />
                   </View>
-              </View>
-          </TouchableOpacity>
-          <View style={styles.search}>
-            <Search />
-          </View>
+                </View>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.schoolLogoWrapper}>
+                      <Image source={require('../../images/gv1.png')}
+                      style={styles.schoolLogo} />
+                    </View>
+                </View>
+            </TouchableOpacity>
+            <View style={styles.search}>
+              <Search />
+            </View>
+          </Header>
         </View>
         <ScrollView style={{height:'75%'}}>
           <View  style={styles.tile}>
@@ -47,7 +53,9 @@ class Feed extends Component {
         <ActionButton
           offsetY={'20%'}
           offsetX={'5%'}
-          buttonColor="#e65100"></ActionButton>
+          buttonColor="#e65100"
+          onPress={() => this.props.displayCreatePostModal()}>
+        </ActionButton>
       </View>
     );
   }
@@ -60,12 +68,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#efefef',
   },
   header: {
-    flexDirection: 'row',
     backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: (Platform.OS === 'ios') ? 50 : 20,
-    paddingLeft: 20,
   },
   imageBorder: {
     borderRadius: 100,
@@ -73,7 +76,7 @@ const styles = StyleSheet.create({
     height: 65,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#8d8d8d',
+    backgroundColor: '#e65100',
   },
   image: {
     flex:1,
@@ -97,15 +100,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     paddingTop: 60,
     paddingLeft: 60,
-    //backgroundColor: 'blue'
   },
   schoolLogoWrapper: {
     height: 35,
     width: 35,
     padding: 5,
-    //paddingBottom: 5,
     backgroundColor: '#bdbdbd',
     borderRadius: 100,
+    borderWidth: 2,
+    borderColor: '#e65100',
   },
   schoolLogo: {
     padding:2,
@@ -113,7 +116,6 @@ const styles = StyleSheet.create({
     height: null,
     width: null,
     flex: 1,
-
   },
   sideNavOpacity: {
     height: 100,
@@ -121,8 +123,19 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
-    //backgroundColor: 'rgba(0,0,0,0.5)',
   },
 });
 
-export default Feed;
+const mapStateToProps = (state) => {
+  return {
+    createPostModalVisible: state.createPostModalVisible,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  displayCreatePostModal() {
+    dispatch(toggleCreatePostModal());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Feed);

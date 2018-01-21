@@ -11,14 +11,14 @@ class Search extends Component {
             name='magnify'
             type="material-community"
             size={18}
-            color={(Platform.OS === 'ios') ? 'white' : '#e65100'} />
+            color='white' />
         </View>
         <View style={styles.search}>
           <TextInput
-            style={{color: (Platform.OS === 'ios') ? 'white' : '#e65100'}}
+            style={styles.input}
             onChangeText={console.log("changed")}
             underlineColorAndroid='#e65100'
-            placeholderTextColor={(Platform.OS === 'ios') ? 'white' : '#e65100'}
+            placeholderTextColor='white'
             placeholder='Search'/>
         </View>
       </View>
@@ -28,14 +28,14 @@ class Search extends Component {
 
 const styles = StyleSheet.create({
   searchBarContainer: {
-    backgroundColor: (Platform.OS === 'ios') ? '#e65100' : null,
+    backgroundColor: '#e65100',
     paddingLeft: 5,
     paddingRight: 5,
     paddingTop: (Platform.OS === 'ios') ? 5 : null,
     paddingBottom: (Platform.OS === 'ios') ? 5 : null,
     margin: 15,
     marginLeft:30,
-    borderRadius: (Platform.OS === 'ios') ? 10 : 10,
+    borderRadius: 10,
     flexDirection: 'row',
   },
   search: {
@@ -43,7 +43,13 @@ const styles = StyleSheet.create({
   },
   icon: {
     justifyContent: 'center',
-  }
+    paddingLeft: 5,
+  },
+  input: {
+    color: 'white',
+    padding: (Platform.OS === 'ios') ? null : 5,
+    paddingLeft: 10,
+  },
 });
 
 export { Search };
