@@ -33,6 +33,14 @@ function appReducer(state = initialState, action) {
       return {
         ...state, newPostCategory: action.payload
       };
+    case 'CLEAR_FIELDS':
+      return {
+        ...state,
+        newPostTitle: '',
+        newPostPrice: '',
+        newPostDescription: '',
+        newPostCategory: 'Books',
+      };
     default:
       return state;
   }

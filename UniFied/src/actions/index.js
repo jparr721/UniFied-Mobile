@@ -34,6 +34,7 @@ export const submitPost = (config) => {
       console.log(error);
       alert(error)
     });
+    dispatch({type: 'CLEAR_FIELDS'});
   }
 };
 

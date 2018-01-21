@@ -49,7 +49,7 @@ class Tile extends Component {
                   name='message-text'
                   type="material-community"
                   size={18}
-                  color='#bdbdbd'/>
+                  color='#e65100'/>
                 <Text style={styles.buttonTitle}>Message</Text>
               </View>
             </TouchableOpacity>
@@ -59,7 +59,7 @@ class Tile extends Component {
                   name='share-variant'
                   type="material-community"
                   size={18}
-                  color='#bdbdbd'/>
+                  color='#e65100'/>
                 <Text style={styles.buttonTitle}>Share</Text>
               </View>
             </TouchableOpacity>
@@ -69,28 +69,11 @@ class Tile extends Component {
                   name='heart'
                   type="material-community"
                   size={18}
-                  color='#bdbdbd'/>
+                  color='#e65100'/>
                 <Text style={styles.buttonTitle}>Favorite</Text>
               </View>
             </TouchableOpacity>
           </View>
-
-
-          {/*<View style={styles.schoolLogoWrapper}>
-            <Image source={require('../../images/gv1.png')}
-            style={styles.schoolLogo} />
-          </View>*/}
-          {/*<Rating
-            ratingCount={4}
-            startingValue={3}
-            readonly
-            imageSize={20}
-            onFinishRating={this.ratingCompleted}
-            ratingColor='#4bacb8'
-            style={styles.rating}
-          />*/}
-
-
         </View>
         {this.props.children}
       </View>
@@ -102,7 +85,6 @@ const styles = StyleSheet.create({
   container: {
     padding:10,
     height: 200,
-    //borderRadius: 10,
     backgroundColor: 'white',
     elevation: 1,
   },
@@ -143,16 +125,12 @@ const styles = StyleSheet.create({
     paddingLeft:10,
     paddingTop: 10,
     paddingRight: 10,
-    //flexDirection: 'row',
   },
   schoolLogoWrapper: {
     height: 40,
     width: 40,
     alignSelf: 'center',
-    //marginTop: 10,
     flex: 1,
-    //backgroundColor: 'red',
-
   },
   schoolLogo: {
     resizeMode: 'contain',
@@ -162,39 +140,29 @@ const styles = StyleSheet.create({
   },
   chatButton: {
     flex: 1,
-    //width: '30%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    //paddingRight: 10,
-    //backgroundColor: 'green',
   },
   buttonTitle: {
-    color: '#bdbdbd',
+    color: '#e65100',
     marginLeft: 5,
     fontSize: 16,
   },
   favoriteButton: {
     flex: 1,
-    //width: '30%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    //backgroundColor: 'green',
-    //paddingLeft: 10,
-    //paddingRight: 10,
   },
   shareButton: {
     flex: 1,
-    //width: '30%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    //paddingLeft: 10,
-    //backgroundColor: 'green',
   },
   buttons: {
     paddingTop: 10,
