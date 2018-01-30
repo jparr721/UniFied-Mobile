@@ -1,4 +1,5 @@
 import axios from 'axios';
+export * from './FilterActions';
 
 export const toggleFilterModal = () => {
   return {
