@@ -38,6 +38,29 @@ export const submitPost = (config) => {
   }
 };
 
+export const getAllPosts = () => {
+  return (dispatch) => {
+    axios.get('http://67.205.128.34/api/unified/posts')
+    .then((data) => {
+      console.log(data);
+      for (key in data.data) {
+        dispatch(addPostToFeed(data.data[key]));
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      alert(error)
+    });
+  }
+};
+
+export const addPostToFeed = (item) => {
+  return {
+    type: 'ADD_POST_TO_FEED',
+    payload: item,
+  }
+};
+
 export const saveNewPostTitle = (title) => {
   return  {
     type: 'SAVE_NEW_POST_TITLE',

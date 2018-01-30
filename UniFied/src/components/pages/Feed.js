@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, ScrollView,
+import { View, Image, StyleSheet, ScrollView, FlatList,
          TouchableOpacity, Text, Platform } from 'react-native';
 import { Icon, Badge } from 'react-native-elements';
 import { Search, Tile, FilterShortcutBar, Header } from '../common';
 import ActionButton from 'react-native-action-button';
-import { toggleCreatePostModal } from '../../actions';
+import { toggleCreatePostModal, getAllPosts } from '../../actions';
 import { connect } from 'react-redux';
 import { CreatePost } from '../popups';
 
 class Feed extends Component {
+  componentWillMount() {
+    this.props.loadPosts();
+  }
+
+  _renderItem = ({item}) => (
+    <View  style={styles.tile} id={item.post_id}>
+      <Tile content={item} />
+    </View>
+  );
   render() {
     return (
       <View style={styles.container}>
@@ -35,20 +44,11 @@ class Feed extends Component {
             </View>
           </Header>
         </View>
-        <ScrollView style={{height:'75%'}}>
-          <View  style={styles.tile}>
-            <Tile />
-          </View>
-          <View  style={styles.tile}>
-            <Tile />
-          </View>
-          <View  style={styles.tile}>
-            <Tile />
-          </View>
-          <View  style={styles.tile}>
-            <Tile />
-          </View>
-        </ScrollView>
+        <FlatList style={{height:'75%'}}
+          data={this.props.posts}
+          keyExtractor={(item, index) => item.post_id}
+          renderItem={this._renderItem}
+        />
         <FilterShortcutBar />
         <ActionButton
           offsetY={'20%'}
@@ -129,12 +129,16 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
   return {
     createPostModalVisible: state.createPostModalVisible,
+    posts: state.posts,
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   displayCreatePostModal() {
     dispatch(toggleCreatePostModal());
+  },
+  loadPosts() {
+    dispatch(getAllPosts());
   },
 });
 

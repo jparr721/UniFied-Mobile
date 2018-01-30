@@ -19,11 +19,11 @@ class Tile extends Component {
             <View style={styles.userName}>
               <Text
                 style={{fontWeight: 'bold', color:'#494949', fontSize: 15}}>
-                Michael Jordan
+                {this.props.content.user_name}
               </Text>
               <Text
                 style={{color:'#494949', fontSize: 12}}>
-                Jan 15 at 4:00pm
+                {this.props.content.date_added}
               </Text>
             </View>
             <View style={styles.dateAndOptions}>
@@ -38,8 +38,7 @@ class Tile extends Component {
         <View style={styles.mainContent}>
           <View style={styles.description}>
             <Text style={{color:'#494949', flex: 1, fontSize: 15}}>
-              Short Desccription will be displayed here.
-              Tapping on the post will reveal more details!
+              {this.props.content.description}
             </Text>
           </View>
           <View style={styles.buttons}>

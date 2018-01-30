@@ -5,6 +5,7 @@ const initialState = {
   newPostPrice: '',
   newPostDescription: '',
   newPostCategory: 'Books',
+  posts: [],
 };
 
 function appReducer(state = initialState, action) {
@@ -40,6 +41,11 @@ function appReducer(state = initialState, action) {
         newPostPrice: '',
         newPostDescription: '',
         newPostCategory: 'Books',
+      };
+    case 'ADD_POST_TO_FEED':
+      return {
+        ...state,
+        posts: [...state.posts, action.payload],
       };
     default:
       return state;
